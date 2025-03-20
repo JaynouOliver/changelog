@@ -1,0 +1,38 @@
+name: Changelog Generator
+
+on:
+  release:
+    types: [created, edited]
+  # Optional: Also trigger on push of tags
+  push:
+    tags:
+      - 'v*' # Trigger on version tags
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all tags and branches
+
+      - name: Log Release Information
+        run: |
+          echo "🎉 New release detected!"
+          echo "Release Tag: ${{ github.ref_name }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event Type: ${{ github.event_name }}"
+          
+          # List all tags for debugging
+          echo "📋 Available tags:"
+          git tag --sort=-creatordate | head -n 5
+          
+          # Get the previous tag for comparison
+          echo "🔍 Finding previous tag..."
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^)
+          echo "Previous tag: $PREV_TAG"
+          
+          # Show commits between tags
+          echo "📝 Commits between $PREV_TAG and ${{ github.ref_name }}:"
+          git log --oneline "$PREV_TAG..${{ github.ref_name }}"
