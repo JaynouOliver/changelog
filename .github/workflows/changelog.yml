@@ -17,6 +17,11 @@ jobs:
         with:
           fetch-depth: 0  # Fetch all history for all tags and branches
 
+      - name: Fetch all tags
+        run: |
+          git fetch --prune --unshallow --tags
+          git tag --sort=-creatordate
+
       - name: Log Release Information
         run: |
           echo "🎉 New release detected!"
@@ -25,14 +30,32 @@ jobs:
           echo "Event Type: ${{ github.event_name }}"
           
           # List all tags for debugging
-          echo "📋 Available tags:"
+          echo "\n📋 Available tags:"
           git tag --sort=-creatordate | head -n 5
           
           # Get the previous tag for comparison
-          echo "🔍 Finding previous tag..."
-          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^)
-          echo "Previous tag: $PREV_TAG"
+          echo "\n🔍 Finding previous tag..."
+          if PREV_TAG=$(git describe --tags --abbrev=0 "${{ github.ref_name }}^" 2>/dev/null); then
+            echo "Previous tag: $PREV_TAG"
+            
+            # Show commits between tags
+            echo "\n📝 Commits between $PREV_TAG and ${{ github.ref_name }}:"
+            git log --pretty=format:"%h - %s" "$PREV_TAG..${{ github.ref_name }}"
+          else
+            echo "This is the first tag in the repository"
+            echo "\n📝 All commits up to this tag:"
+            git log --pretty=format:"%h - %s" "${{ github.ref_name }}"
+          fi
+
+      - name: Generate Simple Changelog
+        run: |
+          echo "## What's Changed" > changelog_entry.md
           
-          # Show commits between tags
-          echo "📝 Commits between $PREV_TAG and ${{ github.ref_name }}:"
-          git log --oneline "$PREV_TAG..${{ github.ref_name }}"
+          if PREV_TAG=$(git describe --tags --abbrev=0 "${{ github.ref_name }}^" 2>/dev/null); then
+            git log --pretty=format:"* %s" "$PREV_TAG..${{ github.ref_name }}" >> changelog_entry.md
+          else
+            git log --pretty=format:"* %s" "${{ github.ref_name }}" >> changelog_entry.md
+          fi
+          
+          echo "\n\nGenerated changelog:\n"
+          cat changelog_entry.md
