@@ -9,19 +9,38 @@ on:
       - 'v*' # Trigger on version tags
 
 jobs:
-  update-status:
+  update-repository:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
       - name: Run update script
         run: |
           python update_data.py
-          echo "Content of latest_status.txt:"
-          cat latest_status.txt
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add data/
+          git commit -m "chore: Update data from API [skip ci]"
+          git push
+
