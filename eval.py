@@ -13,7 +13,8 @@ class OpenAIResponse(BaseModel):
     description: str
 
 
-def get_chat_completion(prompt, model="gpt-3.5-turbo"):
+#openai function
+def get_chat_completion(prompt, model="gpt-4o"):
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
         model=model,
@@ -22,29 +23,19 @@ def get_chat_completion(prompt, model="gpt-3.5-turbo"):
     )
     return response.choices[0].message["content"]
 
-# Fake Commit messages
-commits = [
-    "Added login functionality",
-    "Fixed bug in data pipeline",
-    "Improved API response time"
-]
+def analyze_commits(commit_data):
+    instruction = (
+        "Please analyze these commit messages and return a JSON as provided in the format mentioned in the pydantic model\n"
+        "Commits:\n"
+        f"{commit_data}"
+    )
+    response = get_chat_completion(instruction)
+    # Clean response — handle Markdown or non-JSON outputs
+    response = response.strip().strip("```").replace("json\n", "")
 
-# Convert commits to JSON for the prompt
-commit_json = json.dumps(commits, indent=2)
-
-
-instruction = (
-    "Please analyze these commit messages and return a JSON with the following format:\n"
-    '{ "heading": "Brief title", "description": "Detailed explanation" }\n\n'
-    "Commits:\n"
-    f"{commit_json}"
-)
-
-response = get_chat_completion(instruction)
-
-
-try:
-    parsed_response = OpenAIResponse.model_validate_json(response)
-    print(parsed_response.model_dump_json(indent=2))
-except ValidationError as e:
-    print("Validation Error:", e)
+    try:
+        parsed_response = OpenAIResponse.model_validate_json(response) #pydantic model
+        print(parsed_response.model_dump_json(indent=2))
+    except ValidationError as e:
+        print("Validation Error:", e)
+        print("Raw Response:", response)
