@@ -2,6 +2,7 @@ import os
 import requests
 import json
 from dotenv import load_dotenv
+from response import analyze_commits
 
 load_dotenv()
 
@@ -52,7 +53,10 @@ def get_commits():
         print(f"error{e}")
         return[]
 
-
-from eval import analyze_commits
-commit_data = get_commits()
-analyze_commits(commit_data)
+def main():
+    try:
+        commits = get_commits()
+        return analyze_commits(commits=commits)
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
