@@ -53,7 +53,7 @@ def get_commits():
         print(f"error{e}")
         return[]
 
-def main():
+def openai_json():
     try:
         commits = get_commits()
         return analyze_commits(commits=commits)
