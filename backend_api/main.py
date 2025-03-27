@@ -9,7 +9,7 @@ load_dotenv()
 owner = os.getenv('OWNER')
 repo = os.getenv('REPO')
 
-github_token = os.getenv('GITHUB_API_KEY')
+github_token = os.getenv('API_KEY_GITHUB')
 
 
 headers = {
@@ -60,3 +60,27 @@ def openai_json():
     except Exception as e:
         print(f"Error: {e}")
         return None
+
+def update_changelog(new_data):
+    changelog_file = 'changelog.json'
+    if os.path.exists(changelog_file):
+        with open(changelog_file, 'r') as file:
+            existing_data = json.load(file)
+    else:
+        existing_data = []
+    
+    combined_data = new_data + existing_data
+    
+    with open(changelog_file, 'w') as file:
+        json.dump(combined_data, file, indent=2)
+
+def main():
+    new_data = openai_json()
+    if new_data is not None:
+        update_changelog(new_data)
+        print("Changelog updated successfully.")
+    else:
+        print("Failed to generate changelog.")
+
+if __name__ == "__main__":
+    main()
