@@ -30,7 +30,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OWNER: ${{ secrets.OWNER }}
           REPO: ${{ secrets.REPO }}
-        run: python main.py
+        run: python backend_api/main.py
 
       - name: Commit and push changes
         run: |
