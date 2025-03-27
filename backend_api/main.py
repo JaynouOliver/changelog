@@ -53,23 +53,37 @@ def get_commits():
         print(f"error{e}")
         return[]
 
+import json
+import os
+
 def openai_json():
     try:
         commits = get_commits()
-        return analyze_commits(commits=commits)
+        # json_analyze_commits /= analyze_commits(commits=commits)
+        return analyze_commits(commits=commits).model_dump()
+        
     except Exception as e:
         print(f"Error: {e}")
         return None
 
 def update_changelog(new_data):
     changelog_file = 'changelog.json'
+    
+    if new_data is None:
+        return
+    
     if os.path.exists(changelog_file):
         with open(changelog_file, 'r') as file:
             existing_data = json.load(file)
     else:
         existing_data = []
     
-    combined_data = new_data + existing_data
+    # Ensure new_data is a list
+    if not isinstance(new_data, list):
+        new_data = [new_data]
+    
+    # Combine new and existing data
+    combined_data = existing_data + new_data
     
     with open(changelog_file, 'w') as file:
         json.dump(combined_data, file, indent=2)
