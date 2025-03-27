@@ -39,9 +39,9 @@ jobs:
           git add changelog.json
           git commit -m "Update changelog.json" || echo "No changes to commit"
 
-          git push
+          git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
 
 
       - name: Upload changelog as artifact
