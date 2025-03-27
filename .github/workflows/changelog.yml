@@ -41,9 +41,3 @@ jobs:
           git push origin main
         env:
           GITHUB_TOKEN: ${{ github.token }}
-
-      - name: Upload changelog as artifact
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: changelog
-          path: changelog.json
