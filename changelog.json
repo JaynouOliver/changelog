@@ -38,5 +38,45 @@
         "other_info": "This is noted as issue #1489."
       }
     ]
+  },
+  {
+    "new_features": [
+      {
+        "whats_new": "Release of version 0.7.12",
+        "impact": "Improved stability and feature enhancements in the latest version.",
+        "changes_description": "This update introduces new functionalities and enhancements.",
+        "other_info": "Version 0.7.12 includes bug fixes and performance improvements."
+      },
+      {
+        "whats_new": "Game builder functionality with Gemini added",
+        "impact": "This feature allows users to create and customize games more easily.",
+        "changes_description": "Integration of a game builder tool facilitates the creation of games directly.",
+        "other_info": "This functionality supports enhanced creativity and user engagement."
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Tools added to Gemini agent",
+        "impact": "Fixes related to tools improve the functionality of the Gemini agent.",
+        "changes_description": "Additional tools have been successfully integrated into the system.",
+        "other_info": "This adjustment makes the Gemini agent more versatile."
+      },
+      {
+        "whats_new": "Fixed enum key generator and validator issues",
+        "impact": "Provides a more reliable key generation process.",
+        "changes_description": "The functionality of the key generator and validator has been enhanced to reduce errors.",
+        "other_info": "This fix increases the accuracy of key management."
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": [
+      {
+        "whats_new": "Release of version 0.7.11",
+        "impact": "General performance enhancements and new features implemented.",
+        "changes_description": "This version serves as a stepping stone towards the next significant update.",
+        "other_info": "Version 0.7.11 includes various enhancements and fixes."
+      }
+    ]
   }
 ]
