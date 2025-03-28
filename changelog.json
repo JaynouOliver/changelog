@@ -2,6 +2,45 @@
   {
     "new_features": [
       {
+        "whats_new": "Release version 0.7.12",
+        "impact": "Enhances product stability and usability.",
+        "changes_description": "New version includes minor improvements and adjustments.",
+        "other_info": "This is part of our regular update schedule."
+      },
+      {
+        "whats_new": "Game builder functionality with Gemini added.",
+        "impact": "Provides users with better game creation tools.",
+        "changes_description": "Integrated Gemini to enhance game building experience.",
+        "other_info": "Users can now enjoy enhanced features while creating games."
+      },
+      {
+        "whats_new": "Release version 0.7.11",
+        "impact": "Further improves the application.",
+        "changes_description": "Includes additional features and fixes following version 0.7.10.",
+        "other_info": "Continuing the progression of product enhancements."
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Tools added to Gemini agent.",
+        "impact": "Improves the agent's performance.",
+        "changes_description": "Fixed issues regarding the tools required for Gemini agent to function properly.",
+        "other_info": "This fix will allow for smoother operation of the agent."
+      },
+      {
+        "whats_new": "Enum key generator and validator fixed.",
+        "impact": "Ensures the integrity of data formats.",
+        "changes_description": "Resolved bugs related to key generation and validation to improve reliability.",
+        "other_info": "This fix will enhance user experience by minimizing errors."
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": []
+  },
+  {
+    "new_features": [
+      {
         "whats_new": "Version 0 Released",
         "impact": "This is the latest update which signifies the continuation of development and support for the software.",
         "changes_description": "The software has been officially updated to version 0.7.12, bringing new features and improvements.",
