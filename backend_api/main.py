@@ -27,12 +27,14 @@ def get_release_dates():
         # print(data)
 
         #extract the start and end dates
-        get_date = [find["created_at"] for find in data]
-        # print(f" debug {get_date}")
-        # print(f" debug {get_date[0], get_date[1]}")
+        get_date = [find["published_at"] for find in data]
+        print(f" dates \n {get_date}")
+        print(f" start and end dates {get_date[0], get_date[1]}")
 
         start_date = get_date[0]
+        print(f" start date {start_date}")
         end_date = get_date[1]
+        print(f" end date {end_date}")
         return end_date, start_date
 
     except requests.exceptions.RequestException as e:
@@ -47,6 +49,7 @@ def get_commits():
         # print(getrequest.json())
         commits = [find["commit"]["message"] for find in getrequest.json()]
         commit_json = json.dumps(commits, indent=2) #send directly in json format
+        print(f" commits that will be fed to LLMs \n {commit_json}")
         return commit_json
 
     except requests.exceptions.RequestException as e:
@@ -69,24 +72,32 @@ def openai_json():
 def update_changelog(new_data):
     changelog_file = 'changelog.json'
     
-    if new_data is None:
-        return
-    
-    if os.path.exists(changelog_file):
-        with open(changelog_file, 'r') as file:
-            existing_data = json.load(file)
-    else:
-        existing_data = []
-    
-    # Ensure new_data is a list
-    if not isinstance(new_data, list):
-        new_data = [new_data]
-    
-    # Combine new and existing data (prepend instead of append)
-    combined_data = new_data + existing_data
-    
-    with open(changelog_file, 'w') as file:
-        json.dump(combined_data, file, indent=2)
+    try:
+        if new_data is None:
+            return
+        
+        if os.path.exists(changelog_file) and os.path.getsize(changelog_file) > 0:
+            with open(changelog_file, 'r') as file:
+                try:
+                    existing_data = json.load(file)
+                except json.JSONDecodeError:
+                    # If JSON is invalid, start fresh with empty list
+                    existing_data = []
+        else:
+            existing_data = []
+        
+        # Ensure new_data is a list
+        if not isinstance(new_data, list):
+            new_data = [new_data]
+        
+        # Combine new and existing data (prepend instead of append)
+        combined_data = new_data + existing_data
+        
+        with open(changelog_file, 'w') as file:
+            json.dump(combined_data, file, indent=2)
+            
+    except Exception as e:
+        print(f"Error: {e}")
 
 def main():
     new_data = openai_json()
