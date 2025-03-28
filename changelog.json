@@ -78,5 +78,44 @@
         "other_info": "Version 0.7.11 includes various enhancements and fixes."
       }
     ]
+  },
+  {
+    "new_features": [
+      {
+        "whats_new": "Release version 0.7.12",
+        "impact": "This is an important update that may introduce new functionality or improvements.",
+        "changes_description": "The version number indicates updates to the product.",
+        "other_info": "No specific details provided."
+      },
+      {
+        "whats_new": "Added game builder functionality with Gemini integration.",
+        "impact": "This allows users to create custom games more easily.",
+        "changes_description": "The game builder enhancement provides a new tool for users. It is built upon the Gemini framework for better performance.",
+        "other_info": "This enhancement is designed to improve user engagement."
+      },
+      {
+        "whats_new": "Release version 0.7.11",
+        "impact": "Another significant update that could include additional features or improvements.",
+        "changes_description": "This version builds upon the previous updates and could contain important changes for users.",
+        "other_info": "Details not specified."
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Tools were added to the Gemini agent.",
+        "impact": "This fix improves the functionality of the Gemini agent, making it more useful for users.",
+        "changes_description": "This is an enhancement related to the tools available in the Gemini environment.",
+        "other_info": "Helps in streamlining operations and increasing efficiency."
+      },
+      {
+        "whats_new": "Fixed the Enum key generator and validator.",
+        "impact": "Improves the accuracy and reliability of data generation and validation processes.",
+        "changes_description": "Issues with the key generator and validator were resolved, making these tools more reliable.",
+        "other_info": "Reducing potential errors in data management."
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": []
   }
 ]
