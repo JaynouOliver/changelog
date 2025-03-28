@@ -2,6 +2,39 @@
   {
     "new_features": [
       {
+        "whats_new": "We've released version 0.7.12 of our software, building on previous improvements and adding some new features.",
+        "impact": "This update enhances user experience and software performance.",
+        "changes_description": "The main change is the release of a new version of the software.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "We've added a game builder feature with the Gemini agent.",
+        "impact": "This allows users to create games more easily, broadening creative possibilities.",
+        "changes_description": "The game builder feature integrates the Gemini agent, streamlining the game development process.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "We fixed an issue with tools added to the Gemini agent.",
+        "impact": "This fix improves the reliability and usability of the Gemini agent.",
+        "changes_description": "Previously reported issues with tools in the Gemini agent have been resolved, improving functionality.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "We resolved the issue with the enum key generator and validator.",
+        "impact": "This fix enhances the correctness and reliability of our code generation features.",
+        "changes_description": "The enum key generator and validator were not functioning as expected; this has now been corrected.",
+        "other_info": ""
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": []
+  },
+  {
+    "new_features": [
+      {
         "whats_new": "Release version 0.7.12",
         "impact": "Enhances product stability and usability.",
         "changes_description": "New version includes minor improvements and adjustments.",
