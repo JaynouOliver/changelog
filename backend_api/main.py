@@ -82,8 +82,8 @@ def update_changelog(new_data):
     if not isinstance(new_data, list):
         new_data = [new_data]
     
-    # Combine new and existing data
-    combined_data = existing_data + new_data
+    # Combine new and existing data (prepend instead of append)
+    combined_data = new_data + existing_data
     
     with open(changelog_file, 'w') as file:
         json.dump(combined_data, file, indent=2)
