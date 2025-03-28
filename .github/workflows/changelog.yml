@@ -8,11 +8,14 @@ on:
 jobs:
   update-changelog:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -31,6 +34,9 @@ jobs:
           OWNER: ${{ secrets.OWNER }}
           REPO: ${{ secrets.REPO }}
         run: python backend_api/main.py
+
+      - name: Debug current branch
+        run: git branch --show-current
 
       - name: Commit and push changes
         run: |
