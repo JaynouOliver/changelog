@@ -26,23 +26,28 @@ def get_release_dates():
         data = getrequest.json()
         # print(data)
 
+        #get release name
+        release_name = [find["name"] for find in data]
+        print(f" release names \n \n {release_name}")
+
         #extract the start and end dates
         get_date = [find["published_at"] for find in data]
-        print(f" dates \n {get_date}")
-        print(f" start and end dates {get_date[0], get_date[1]}")
+        print(f" \n dates \n \n {get_date}")
+        # print(f" start and end dates {get_date[0], get_date[1]}")
 
         start_date = get_date[0]
         print(f" start date {start_date}")
         end_date = get_date[1]
         print(f" end date {end_date}")
-        return end_date, start_date
+        print(f" latest release name {release_name[0]}")
+        return end_date, start_date, release_name[0]
 
     except requests.exceptions.RequestException as e:
         print(f"error{e}")
 
 def get_commits():
     try: 
-        end_date, start_date = get_release_dates()
+        end_date, start_date, release_name = get_release_dates()
         commit_url = f"https://api.github.com/repos/{owner}/{repo}/commits?since={end_date}&until={start_date}&per_page=100&page=1"
         getrequest = requests.get(commit_url, headers=headers)
         getrequest.raise_for_status() #this is for raising an http error if it occurs 
@@ -50,7 +55,7 @@ def get_commits():
         commits = [find["commit"]["message"] for find in getrequest.json()]
         commit_json = json.dumps(commits, indent=2) #send directly in json format
         print(f" commits that will be fed to LLMs \n {commit_json}")
-        return commit_json
+        return commit_json, release_name
 
     except requests.exceptions.RequestException as e:
         print(f"error{e}")
@@ -61,9 +66,9 @@ import os
 
 def openai_json():
     try:
-        commits = get_commits()
+        commits, release_name = get_commits()
         # json_analyze_commits /= analyze_commits(commits=commits)
-        return analyze_commits(commits=commits).model_dump()
+        return analyze_commits(commits=commits, release_name=release_name).model_dump()
         
     except Exception as e:
         print(f"Error: {e}")

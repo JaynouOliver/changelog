@@ -11,18 +11,19 @@ class SubResponse(BaseModel):
     other_info: str
     
 class MainResponse(BaseModel):
+    release_name: str
     new_features: list[SubResponse]
     bug_fixes: list[SubResponse]
     tests: list[SubResponse]
     documentation: list[SubResponse]
     others: list[SubResponse]
 
-def analyze_commits(commits):
+def analyze_commits(commits, release_name):
     try:
         completion = client.beta.chat.completions.parse(
             model="gpt-4o-mini-2024-07-18",
             messages=[
-                {"role": "system", "content": "Analyze the GitHub commit data. You already have knowledge about the code that is the commit messages. You have the knowledge of the industry. Try to understand what the organization is doing. Try to understand the commit messages. Try to understand what they are talking about. Combine information into categories. Categorize them accordingly in a proper JSON format as specified in the PYDANTIC structure. I want you to categorize them accordingly. MAKE THIS IN HUMAN READABLE FORMAT, FOR USERS WHO HAVE NO TECHNICAL KNOWLEDGE. Example  - you can simplify the bug fixes, simplify technical terms, and make it more appealing for to be presented in a customer facing website. Keep placeholders like other_info or changes etc blank if you don't have any information."},
+                {"role": "system", "content": f"Analyze the GitHub commit data. You already have knowledge about the code that is the commit messages. You have the knowledge of the industry. Try to understand what the organization is doing. Try to understand the commit messages. Try to understand what they are talking about. Combine information into categories. Categorize them accordingly in a proper JSON format as specified in the PYDANTIC structure. I want you to categorize them accordingly. MAKE THIS IN HUMAN READABLE FORMAT, FOR USERS WHO HAVE NO TECHNICAL KNOWLEDGE. Example  - you can simplify the bug fixes, simplify technical terms, and make it more appealing for to be presented in a customer facing website. Keep placeholders like other_info or changes etc blank if you don't have any information. This is the release name: {release_name}"},
                 {"role": "user", "content": "\n".join(commits)},
             ],
             response_format=MainResponse,

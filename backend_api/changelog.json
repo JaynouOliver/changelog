@@ -1,0 +1,57 @@
+[
+  {
+    "release_name": "2025.03.4",
+    "new_features": [
+      {
+        "whats_new": "Updated the version number to 2025.03.4 and modified some operational features.",
+        "impact": "This change improves the overall performance and stability by using the latest version.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Removed migration flags from the previous version.",
+        "impact": "This should simplify deployment processes and reduce confusion during setup.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Introduced tests against ClickHouse Cloud to ensure functionality remains intact.",
+        "impact": "Guarantees that the application works well with our cloud service without issues after this update.",
+        "changes_description": "Conducted tests to compare performance and reliability against the ClickHouse Cloud service.",
+        "other_info": ""
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Updated Docker publish usage to employ non-semver tags.",
+        "impact": "Facilitates easier version management for users of Docker images.",
+        "changes_description": "Now, the Docker tag will be based on the current Git tag name, making it more intuitive.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Removed unnecessary prefix from published images.",
+        "impact": "Improves clarity and usability of images for end-users.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Reduced concurrent runs to a maximum of 50 to optimize performance.",
+        "impact": "This change helps in resource management, ensuring the service runs efficiently without overload.",
+        "changes_description": "",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Bumped up the versioning of dependencies to leverage improved features and fixes from those dependencies.",
+        "impact": "Keeps the software up-to-date and secure by using the latest versions of dependencies.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ]
+  }
+]
