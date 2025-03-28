@@ -2,6 +2,39 @@
   {
     "new_features": [
       {
+        "whats_new": "We've released version 0.7.12 of our software, building on previous improvements and adding some new features.",
+        "impact": "This update enhances user experience and software performance.",
+        "changes_description": "The main change is the release of a new version of the software.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "We've added a game builder feature with the Gemini agent.",
+        "impact": "This allows users to create games more easily, broadening creative possibilities.",
+        "changes_description": "The game builder feature integrates the Gemini agent, streamlining the game development process.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "We fixed an issue with tools added to the Gemini agent.",
+        "impact": "This fix improves the reliability and usability of the Gemini agent.",
+        "changes_description": "Previously reported issues with tools in the Gemini agent have been resolved, improving functionality.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "We resolved the issue with the enum key generator and validator.",
+        "impact": "This fix enhances the correctness and reliability of our code generation features.",
+        "changes_description": "The enum key generator and validator were not functioning as expected; this has now been corrected.",
+        "other_info": ""
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": []
+  },
+  {
+    "new_features": [
+      {
         "whats_new": "Release version 0.7.12",
         "impact": "Enhances product stability and usability.",
         "changes_description": "New version includes minor improvements and adjustments.",
@@ -34,87 +67,33 @@
         "other_info": "This fix will enhance user experience by minimizing errors."
       }
     ],
-    "tests": [],
-    "documentation": [],
-    "others": []
-  },
-  {
-    "new_features": [
+    "documentation": [
       {
-        "whats_new": "Version 0 Released",
-        "impact": "This is the latest update which signifies the continuation of development and support for the software.",
-        "changes_description": "The software has been officially updated to version 0.7.12, bringing new features and improvements.",
-        "other_info": "This version is expected to enhance user experience."
+        "whats_new": "Updated Docker publish usage to employ non-semver tags.",
+        "impact": "Facilitates easier version management for users of Docker images.",
+        "changes_description": "Now, the Docker tag will be based on the current Git tag name, making it more intuitive.",
+        "other_info": ""
       },
       {
-        "whats_new": "Game Builder Feature Added",
-        "impact": "A new feature has been introduced to allow users to create games using the Gemini software.",
-        "changes_description": "Users can now use the new game builder functionality with Gemini for an enhanced gaming experience.",
-        "other_info": "This should make it easier for users to engage with game development."
+        "whats_new": "Removed unnecessary prefix from published images.",
+        "impact": "Improves clarity and usability of images for end-users.",
+        "changes_description": "",
+        "other_info": ""
       }
     ],
-    "bug_fixes": [
-      {
-        "whats_new": "Tools Added to Gemini Agent",
-        "impact": "Improvements made to the tools available within the Gemini system.",
-        "changes_description": "Additional tools have been successfully integrated into the Gemini agent, enhancing its functionality.",
-        "other_info": "This update allows users to utilize more tools for better performance."
-      },
-      {
-        "whats_new": "Enum Key Generator and Validator Fixed",
-        "impact": "Resolved an issue that may have caused functionality to break when generating or validating keys.",
-        "changes_description": "A bug fix has been implemented for the enum key generator and validator to ensure they work reliably.",
-        "other_info": "Users should experience smoother operations with this fix."
-      }
-    ],
-    "tests": [],
-    "documentation": [],
     "others": [
       {
-        "whats_new": "Version 0.7.11 Released",
-        "impact": "A previous update has also been documented, showing that ongoing improvements are made periodically.",
-        "changes_description": "The software was also updated to version 0.7.11 prior to 0.7.12.",
-        "other_info": "This version introduced improvements as well, further enhancing the software's capabilities."
+        "whats_new": "Reduced concurrent runs to a maximum of 50 to optimize performance.",
+        "impact": "This change helps in resource management, ensuring the service runs efficiently without overload.",
+        "changes_description": "",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Bumped up the versioning of dependencies to leverage improved features and fixes from those dependencies.",
+        "impact": "Keeps the software up-to-date and secure by using the latest versions of dependencies.",
+        "changes_description": "",
+        "other_info": ""
       }
     ]
-  },
-  {
-    "new_features": [
-      {
-        "whats_new": "Release of version 0.7.12",
-        "impact": "Brings the latest updates and improvements to our application.",
-        "changes_description": "This version includes new tools and enhancements for better user experience.",
-        "other_info": "Includes minor features and performance enhancements."
-      },
-      {
-        "whats_new": "Introduction of the game builder with Gemini added",
-        "impact": "Allows users to build games more easily with the new tools provided.",
-        "changes_description": "A new feature enabling game creation is now available.",
-        "other_info": "This builder tool simplifies game development."
-      },
-      {
-        "whats_new": "Release of version 0.7.11",
-        "impact": "Continues to enhance overall application functionality and stability.",
-        "changes_description": "This version focuses on improving existing features and fixing known issues.",
-        "other_info": "It includes all the changes from earlier versions."
-      }
-    ],
-    "bug_fixes": [
-      {
-        "whats_new": "Tools added to the Gemini agent",
-        "impact": "Fixes issues with missing tools for the Gemini agent.",
-        "changes_description": "Users can now access additional tools when using the Gemini agent.",
-        "other_info": "Enhances the agent's performance."
-      },
-      {
-        "whats_new": "Fixes for enum key generator and validator",
-        "impact": "Resolves critical issues that were affecting the application's performance.",
-        "changes_description": "The key generator and validator now function correctly, ensuring better data handling.",
-        "other_info": "This fix was necessary to improve system reliability."
-      }
-    ],
-    "tests": [],
-    "documentation": [],
-    "others": []
   }
 ]
