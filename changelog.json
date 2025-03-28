@@ -2,6 +2,46 @@
   {
     "new_features": [
       {
+        "whats_new": "Version 0.7.12 Released",
+        "impact": "This is the latest update which signifies the continuation of development and support for the software.",
+        "changes_description": "The software has been officially updated to version 0.7.12, bringing new features and improvements.",
+        "other_info": "This version is expected to enhance user experience."
+      },
+      {
+        "whats_new": "Game Builder Feature Added",
+        "impact": "A new feature has been introduced to allow users to create games using the Gemini software.",
+        "changes_description": "Users can now use the new game builder functionality with Gemini for an enhanced gaming experience.",
+        "other_info": "This should make it easier for users to engage with game development."
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Tools Added to Gemini Agent",
+        "impact": "Improvements made to the tools available within the Gemini system.",
+        "changes_description": "Additional tools have been successfully integrated into the Gemini agent, enhancing its functionality.",
+        "other_info": "This update allows users to utilize more tools for better performance."
+      },
+      {
+        "whats_new": "Enum Key Generator and Validator Fixed",
+        "impact": "Resolved an issue that may have caused functionality to break when generating or validating keys.",
+        "changes_description": "A bug fix has been implemented for the enum key generator and validator to ensure they work reliably.",
+        "other_info": "Users should experience smoother operations with this fix."
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": [
+      {
+        "whats_new": "Version 0.7.11 Released",
+        "impact": "A previous update has also been documented, showing that ongoing improvements are made periodically.",
+        "changes_description": "The software was also updated to version 0.7.11 prior to 0.7.12.",
+        "other_info": "This version introduced improvements as well, further enhancing the software's capabilities."
+      }
+    ]
+  },
+  {
+    "new_features": [
+      {
         "whats_new": "Release of version 0.7.12",
         "impact": "Brings the latest updates and improvements to our application.",
         "changes_description": "This version includes new tools and enhancements for better user experience.",
