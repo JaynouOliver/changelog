@@ -1,0 +1,30 @@
+[
+  {
+    "release_name": "v0.7.12",
+    "new_features": [
+      {
+        "whats_new": "Introduction of a new game building feature with Gemini agent support.",
+        "impact": "This improvement allows users to create games more efficiently using the updated tools.",
+        "changes_description": "Added tools that enhance the game-building experience.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Fixed tool issues regarding the Gemini agent.",
+        "impact": "Users can now use the Gemini agent tools without errors, improving overall functionality.",
+        "changes_description": "Resolved bugs related to the Gemini agent tools, ensuring a smoother user experience.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Fixed issues in the enu key generator and validator.",
+        "impact": "This fix ensures that the key generator and validator work correctly, preventing potential errors in usage.",
+        "changes_description": "Corrected the functionality of the enu key generator and validator to function as intended.",
+        "other_info": ""
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": []
+  }
+]
