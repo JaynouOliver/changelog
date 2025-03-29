@@ -1,5 +1,84 @@
 [
   {
+    "release_name": "PyTorch 2.6.0 Release",
+    "new_features": [
+      {
+        "whats_new": "Support for multiple clusters while managing MI300 labels.",
+        "impact": "This feature accommodates good resource distribution across multiple Kubernetes clusters.",
+        "changes_description": "",
+        "other_info": "This makes managing workloads simpler and more efficient."
+      },
+      {
+        "whats_new": "Implemented a feature for 128-bit vectorization that enhances performance by 4-10%.",
+        "impact": "This improvement boosts operation speeds for specific tasks within the system.",
+        "changes_description": "",
+        "other_info": "Works great for workloads on Hopper H100."
+      },
+      {
+        "whats_new": "Expanded testing parameters for dynamic output shapes.",
+        "impact": "Ensures output consistency between eager and compiled versions.",
+        "changes_description": "",
+        "other_info": "Improves reliability of tensor operations."
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Fixed size assignment to assert scalar in partitioners.",
+        "impact": "Prevents warnings and errors during runtime for partitioned tensors.",
+        "changes_description": "",
+        "other_info": "Ensures smoother operations in the system."
+      },
+      {
+        "whats_new": "Removed redundant types for cleaner code.",
+        "impact": "Reduces complexity in the codebase and improves maintainability.",
+        "changes_description": "",
+        "other_info": "Helps in easier debugging and enhancements in the future."
+      },
+      {
+        "whats_new": "Fixed issues with GPU isolation in Kubernetes pods.",
+        "impact": "Ensures that tasks performed in Kubernetes are accurately tied to their assigned GPU.",
+        "changes_description": "",
+        "other_info": "Improves accuracy in resource allocation."
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Added conditional benchmarks for better performance evaluation.",
+        "impact": "Allows for in-depth analysis of the system's efficiency.",
+        "changes_description": "",
+        "other_info": "Enhances the overall quality assurance process."
+      },
+      {
+        "whats_new": "Improved tests for dynamic shapes in tensors.",
+        "impact": "Ensures that the model handles varied input shapes without errors.",
+        "changes_description": "",
+        "other_info": "Boosts the robustness of the system."
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Updated documentation for new features and bug fixes.",
+        "impact": "Provides clearer guidance for users and developers.",
+        "changes_description": "",
+        "other_info": "Ensures users are aware of changes and how to implement new features."
+      },
+      {
+        "whats_new": "Added guides for testing procedures.",
+        "impact": "Facilitates easier onboarding for new developers.",
+        "changes_description": "",
+        "other_info": "Helps in maintaining code quality."
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Removed old unnecessary files.",
+        "impact": "Frees up space and manages resources efficiently.",
+        "changes_description": "",
+        "other_info": "Tilts the balance towards a cleaner and more organized codebase."
+      }
+    ]
+  },
+  {
     "release_name": "PyTorch 2.5.0 Release",
     "new_features": [
       {
