@@ -1,0 +1,31 @@
+[
+  {
+    "release_name": "v0.7.12",
+    "new_features": [
+      {
+        "whats_new": "Game builder feature integrated with Gemini agent",
+        "impact": "Enhances game development capabilities for users.",
+        "changes_description": "Introduced a game building tool that allows for easier creation of games using the Gemini agent.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Fixed issues with the Enums key generator and validator",
+        "impact": "Improves the reliability of code generated for enums.",
+        "changes_description": "Resolved bugs related to generating and validating enum keys, making it easier for developers to use enums in their code.",
+        "other_info": ""
+      }
+    ],
+    "tests": [],
+    "documentation": [],
+    "others": [
+      {
+        "whats_new": "Additional tools added to Gemini agent",
+        "impact": "Expands functionality for users utilizing the Gemini agent.",
+        "changes_description": "Added new tools that enhance the Gemini agent's capabilities for better development and usability.",
+        "other_info": ""
+      }
+    ]
+  }
+]
