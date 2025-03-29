@@ -16,18 +16,26 @@ interface ReleaseBlock {
   others: ChangeLogItem[];
 }
 
-// Components for rendering different sections
+// Components for renderi ng different sections
 const NewFeatures = ({ items }: { items: ChangeLogItem[] }) => (
   <section className="mt-6">
-    <h2 className="text-xl font-semibold mb-4">New Features</h2>
+    <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">New Features</h2>
     <ul className="space-y-6">
       {items.map((item, index) => (
-        <li key={index} className="space-y-2">
-          <p className="text-lg font-medium">{item.whats_new}</p>
-          <p className="text-gray-600 dark:text-gray-300">{item.impact}</p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">{item.changes_description}</p>
+        <li key={index} className="group p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+          <p className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            {item.whats_new}
+          </p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
+            {item.impact}
+          </p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            {item.changes_description}
+          </p>
           {item.other_info && (
-            <p className="text-gray-400 dark:text-gray-500 text-sm">{item.other_info}</p>
+            <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">
+              {item.other_info}
+            </p>
           )}
         </li>
       ))}
@@ -37,15 +45,23 @@ const NewFeatures = ({ items }: { items: ChangeLogItem[] }) => (
 
 const BugFixes = ({ items }: { items: ChangeLogItem[] }) => (
   <section className="mt-6">
-    <h2 className="text-xl font-semibold mb-4">Bug Fixes</h2>
+    <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Bug Fixes</h2>
     <ul className="space-y-6">
       {items.map((item, index) => (
-        <li key={index} className="space-y-2">
-          <p className="text-lg font-medium">{item.whats_new}</p>
-          <p className="text-gray-600 dark:text-gray-300">{item.impact}</p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">{item.changes_description}</p>
+        <li key={index} className="group p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+          <p className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            {item.whats_new}
+          </p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
+            {item.impact}
+          </p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            {item.changes_description}
+          </p>
           {item.other_info && (
-            <p className="text-gray-400 dark:text-gray-500 text-sm">{item.other_info}</p>
+            <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">
+              {item.other_info}
+            </p>
           )}
         </li>
       ))}
@@ -55,15 +71,23 @@ const BugFixes = ({ items }: { items: ChangeLogItem[] }) => (
 
 const Tests = ({ items }: { items: ChangeLogItem[] }) => (
   <section className="mt-6">
-    <h2 className="text-xl font-semibold mb-4">Tests</h2>
+    <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Tests</h2>
     <ul className="space-y-6">
       {items.map((item, index) => (
-        <li key={index} className="space-y-2">
-          <p className="text-lg font-medium">{item.whats_new}</p>
-          <p className="text-gray-600 dark:text-gray-300">{item.impact}</p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">{item.changes_description}</p>
+        <li key={index} className="group p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+          <p className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            {item.whats_new}
+          </p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
+            {item.impact}
+          </p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            {item.changes_description}
+          </p>
           {item.other_info && (
-            <p className="text-gray-400 dark:text-gray-500 text-sm">{item.other_info}</p>
+            <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">
+              {item.other_info}
+            </p>
           )}
         </li>
       ))}
@@ -73,15 +97,23 @@ const Tests = ({ items }: { items: ChangeLogItem[] }) => (
 
 const Documentation = ({ items }: { items: ChangeLogItem[] }) => (
   <section className="mt-6">
-    <h2 className="text-xl font-semibold mb-4">Documentation</h2>
+    <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Documentation</h2>
     <ul className="space-y-6">
       {items.map((item, index) => (
-        <li key={index} className="space-y-2">
-          <p className="text-lg font-medium">{item.whats_new}</p>
-          <p className="text-gray-600 dark:text-gray-300">{item.impact}</p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">{item.changes_description}</p>
+        <li key={index} className="group p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+          <p className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            {item.whats_new}
+          </p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
+            {item.impact}
+          </p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            {item.changes_description}
+          </p>
           {item.other_info && (
-            <p className="text-gray-400 dark:text-gray-500 text-sm">{item.other_info}</p>
+            <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">
+              {item.other_info}
+            </p>
           )}
         </li>
       ))}
@@ -91,15 +123,23 @@ const Documentation = ({ items }: { items: ChangeLogItem[] }) => (
 
 const Others = ({ items }: { items: ChangeLogItem[] }) => (
   <section className="mt-6">
-    <h2 className="text-xl font-semibold mb-4">Others</h2>
+    <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Others</h2>
     <ul className="space-y-6">
       {items.map((item, index) => (
-        <li key={index} className="space-y-2">
-          <p className="text-lg font-medium">{item.whats_new}</p>
-          <p className="text-gray-600 dark:text-gray-300">{item.impact}</p>
-          <p className="text-gray-500 dark:text-gray-400 text-sm">{item.changes_description}</p>
+        <li key={index} className="group p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+          <p className="text-lg font-medium text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            {item.whats_new}
+          </p>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">
+            {item.impact}
+          </p>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+            {item.changes_description}
+          </p>
           {item.other_info && (
-            <p className="text-gray-400 dark:text-gray-500 text-sm">{item.other_info}</p>
+            <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">
+              {item.other_info}
+            </p>
           )}
         </li>
       ))}
