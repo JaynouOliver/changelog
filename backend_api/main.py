@@ -75,7 +75,7 @@ def openai_json():
         return None
 
 def update_changelog(new_data):
-    changelog_file = 'frontend.json'
+    changelog_file = 'changelog.json'
     
     if new_data is None:
         return
