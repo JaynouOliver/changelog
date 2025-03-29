@@ -1,5 +1,78 @@
 [
   {
+    "release_name": "PyTorch 2.6.0 Release",
+    "new_features": [
+      {
+        "whats_new": "Introduction of new features and functions to enhance usability.",
+        "impact": "Improves user experience by simplifying functions and adding new capabilities.",
+        "changes_description": "Added CUDA features to integrate better with dynamic configurations.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Enhanced support for multiple clusters and resources.",
+        "impact": "Allows users to effectively manage multiple Kubernetes clusters with ease.",
+        "changes_description": "Updated labeling on resources to manage multiple clusters uniformly.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Fixed issue with computational functions in specific environments.",
+        "impact": "Eliminates crashes when using casual setups on older devices.",
+        "changes_description": "Handled dimension errors and ensured proper configurations on features.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Corrected an error related to memory usage for normal operations.",
+        "impact": "Improves performance and stability of applications utilizing GPU capabilities.",
+        "changes_description": "Addresses issues encountered when allocating resources dynamically.",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Added extensive testing protocol for new features.",
+        "impact": "Ensures new updates do not break existing functionality.",
+        "changes_description": "Implemented backward compatibility tests to validate system stability.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Fixed and refined tests for GPU functionalities.",
+        "impact": "Increases reliability of GPU-based computations within user-defined environments.",
+        "changes_description": "Added additional test cases that verify GPU configurations across different setups.",
+        "other_info": ""
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Enhanced clarity on using the new features introduced in the release.",
+        "impact": "Aids users in navigating updates with comprehensive guides.",
+        "changes_description": "Updated documentation to reflect changes in the API and additional functionalities.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Improved examples for developers using the library.",
+        "impact": "Provides clearer understanding of how to implement new features.",
+        "changes_description": "Included practical code examples demonstrating new capabilities.",
+        "other_info": ""
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Improved overall performance of the library.",
+        "impact": "Makes applications built on this library run faster and more efficiently.",
+        "changes_description": "Optimized key algorithms for better resource management.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Introduced threading improvements for better handling of parallel tasks.",
+        "impact": "Enhances performance when executing multiple operations simultaneously.",
+        "changes_description": "Restructured thread handling and resource allocation mechanisms.",
+        "other_info": ""
+      }
+    ]
+  },
+  {
     "release_name": "v0.7.12",
     "new_features": [
       {
