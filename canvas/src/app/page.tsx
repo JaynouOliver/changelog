@@ -4,12 +4,15 @@ interface ChangeLogItem {
   whats_new: string;
   impact: string;
   changes_description: string;
-  other_info?: string; // Optional field
+  other_info?: string;
 }
 
-interface ChangeLogData {
+interface ChangeLogEntry {
+  release_name: string;
   new_features: ChangeLogItem[];
   bug_fixes: ChangeLogItem[];
+  tests: ChangeLogItem[];
+  documentation: ChangeLogItem[];
   others: ChangeLogItem[];
 }
 
@@ -69,43 +72,36 @@ const Others = ({ items }: { items: ChangeLogItem[] }) => (
 );
 
 // Fetch data from GitHub raw URL using React Server Component
-async function fetchData(): Promise<ChangeLogData> {
+async function fetchData(): Promise<ChangeLogEntry[]> {
   const url = 'https://raw.githubusercontent.com/JaynouOliver/changelog/main/changelog.json';
 
   try {
-    const res = await fetch(url, { cache: 'no-store' }); // Disable cache for real-time updates
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) {
       throw new Error('Failed to fetch changelog data');
     }
-    const data: { new_features: ChangeLogItem[]; bug_fixes: ChangeLogItem[]; others: ChangeLogItem[] }[] = await res.json();
-
-    // Flatten the data into a single ChangeLogData object
-    const flattenedData = {
-      new_features: data.flatMap(item => item.new_features || []),
-      bug_fixes: data.flatMap(item => item.bug_fixes || []),
-      others: data.flatMap(item => item.others || []),
-    };
-
-    return flattenedData;
+    const data: ChangeLogEntry[] = await res.json();
+    return data;
   } catch (error) {
     console.error('Error fetching changelog:', error);
-    return {
-      new_features: [],
-      bug_fixes: [],
-      others: [],
-    };
+    return [];
   }
 }
 
 export default async function Page() {
-  const data = await fetchData();
+  const entries = await fetchData();
 
   return (
     <div>
       <h1>Changelog</h1>
-      {data.new_features?.length > 0 && <NewFeatures items={data.new_features} />}
-      {data.bug_fixes?.length > 0 && <BugFixes items={data.bug_fixes} />}
-      {data.others?.length > 0 && <Others items={data.others} />}
+      {entries.map((entry, index) => (
+        <div key={index} className="changelog-entry">
+          <h2 className="release-name">{entry.release_name}</h2>
+          {entry.new_features?.length > 0 && <NewFeatures items={entry.new_features} />}
+          {entry.bug_fixes?.length > 0 && <BugFixes items={entry.bug_fixes} />}
+          {entry.others?.length > 0 && <Others items={entry.others} />}
+        </div>
+      ))}
     </div>
   );
 }

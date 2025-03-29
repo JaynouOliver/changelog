@@ -30,10 +30,10 @@ def analyze_commits(commits, release_name):
         )
 
         event = completion.choices[0].message.parsed
-        event_json = json.dumps(event.model_dump(), indent=4) #converting to json format pydantic (https://docs.pydantic.dev/latest/concepts/serialization/) faced some problems here 🙃
+        # event_json = json.dumps(event.model_dump(), indent=4) #converting to json format pydantic (https://docs.pydantic.dev/latest/concepts/serialization/) faced some problems here 🙃
 
 
-        print(f"commit analysis: -->  \n {event_json}")
+        # print(f"commit analysis: -->  \n {event_json}")
         return event
     except Exception as e:
         print(f"Error: {e}")

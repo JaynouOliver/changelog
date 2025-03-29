@@ -75,39 +75,38 @@ def openai_json():
         return None
 
 def update_changelog(new_data):
-    changelog_file = 'changelog.json'
+    changelog_file = 'frontend.json'
     
-    try:
-        if new_data is None:
-            return
-        
-        if os.path.exists(changelog_file) and os.path.getsize(changelog_file) > 0:
+    if new_data is None:
+        return
+    
+    existing_data = []
+    
+    if os.path.exists(changelog_file):
+        try:
             with open(changelog_file, 'r') as file:
-                try:
+                # Check if file has content before loading
+                if os.stat(changelog_file).st_size > 0:
                     existing_data = json.load(file)
-                except json.JSONDecodeError:
-                    # If JSON is invalid, start fresh with empty list
-                    existing_data = []
-        else:
+        except (json.JSONDecodeError, FileNotFoundError):
+            # Handle empty/corrupted files
             existing_data = []
-        
-        # Ensure new_data is a list
-        if not isinstance(new_data, list):
-            new_data = [new_data]
-        
-        # Combine new and existing data (prepend instead of append)
-        combined_data = new_data + existing_data
-        
-        with open(changelog_file, 'w') as file:
-            json.dump(combined_data, file, indent=2)
-            
-    except Exception as e:
-        print(f"Error: {e}")
+    
+    # Combine new and existing data (prepend instead of append)
+    # combined_data = new_data + existing_data
+    #isinstance checks if the new data is a list, else it packs it into a list
+    combined_data = (new_data if isinstance(new_data, list) else [new_data]) + existing_data
+    
+    with open(changelog_file, 'w') as file:
+        json.dump(combined_data, file, indent=2)
+
 
 def main():
     new_data = openai_json()
     if new_data is not None:
         update_changelog(new_data)
+        event_json = json.dumps(new_data, indent=2)
+        print(event_json)
         print("Changelog updated successfully.")
     else:
         print("Failed to generate changelog.")
