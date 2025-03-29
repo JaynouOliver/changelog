@@ -18,7 +18,7 @@
       },
       {
         "whats_new": "Fixed issues in the menu key generator and validator.",
-        "impact": "This fix ensures that the key generator and validator work correctly, preventing potential errors in usage.",
+        "impact": " fix ensures that the key generator and validator work correctly, preventing potential errors in usage.",
         "changes_description": "Corrected the functionality of the enu key generator and validator to function as intended.",
         "other_info": ""
       }
