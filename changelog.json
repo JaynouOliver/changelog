@@ -3,7 +3,7 @@
     "release_name": "2025.03.4",
     "new_features": [
       {
-        "whats_new": "Improved handling of cloud-based services and tasks connected to ClickHouse.",
+        "whats_new": "",
         "impact": "Users will experience better performance and reliability when using cloud services.",
         "changes_description": "Enhanced ClickHouse tests ensure better integration with cloud operations.",
         "other_info": ""
