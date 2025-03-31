@@ -1,1 +1,57 @@
-
+[
+  {
+    "release_name": "2025.03.4",
+    "new_features": [
+      {
+        "whats_new": "Updated documentation usage for Docker publishing.",
+        "impact": "This change simplifies the tagging process by using the git tag name directly for Docker images, making it easier to manage versions.",
+        "changes_description": "Now, the Docker publish uses non-SemVer tags directly as the git tag name will be used for Docker tagging.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Removed migration flag that was no longer needed.",
+        "impact": "This cleaning up helps streamline the code and potentially removes unnecessary complexity.",
+        "changes_description": "The migration flag that was previously included has been removed, indicating that the migration process is complete or no longer required.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Adjusted ClickHouse tests and runtime to improve performance.",
+        "impact": "This adjustment could lead to improved performance and reliability of ClickHouse's cloud features.",
+        "changes_description": "Tests were run against ClickHouse Cloud, and adjustments were made to account for better runtime situations and concurrent processes.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Fixed issues with Docker image naming by removing a specific prefix.",
+        "impact": "This change helps in simplifying the image naming conventions and reduces potential confusion.",
+        "changes_description": "The prefix 'tenzorzero-' was removed from the published images, leading to a clearer naming scheme.",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Run ClickHouse tests against ClickHouse Cloud.",
+        "impact": "Validates the implementation and helps ensure functionality within the cloud context.",
+        "changes_description": "Running these tests ensures that the ClickHouse features are working effectively in the cloud environment.",
+        "other_info": ""
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Updated documentation regarding Docker publish usage.",
+        "impact": "Documentation helps users understand the updated procedures better, encouraging proper usage of the features.",
+        "changes_description": "Instructions on how to use Docker with the latest version have been clarified, providing better guidance to users.",
+        "other_info": ""
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Bump version to 2025.03.4 and minor version updates in dependencies.",
+        "impact": "Keeping dependencies current ensures that the software remains secure and performs well.",
+        "changes_description": "Versioning adjustments and minor updates in additional libraries were performed for overall improvement.",
+        "other_info": ""
+      }
+    ]
+  }
+]
