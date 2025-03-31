@@ -1,1 +1,57 @@
-
+[
+  {
+    "release_name": "2025.03.4",
+    "new_features": [
+      {
+        "whats_new": "Improved handling of cloud-based services and tasks connected to ClickHouse.",
+        "impact": "Users will experience better performance and reliability when using cloud services.",
+        "changes_description": "Enhanced ClickHouse tests ensure better integration with cloud operations.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Updated Docker publishing settings.",
+        "impact": "The Docker images will now use a more standardized tagging system.",
+        "changes_description": "This simplifies the tagging process and reduces confusion for users.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Fixed issues related to migration flags.",
+        "impact": "This fix streamlines the migration process for users.",
+        "changes_description": "Removed unnecessary migration flags for clarity during updates.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Addressed runtime issues during ClickHouse operations.",
+        "impact": "Improved stability for applications relying on ClickHouse.",
+        "changes_description": "Adjusted runtime configurations to improve cloud interactions and decrease limitations on how many processes can run simultaneously.",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Implemented comprehensive ClickHouse tests.",
+        "impact": "Increased confidence in the platform's reliability and performance.",
+        "changes_description": "Tests now cover cloud-related scenarios to ensure robust operation on the ClickHouse platform.",
+        "other_info": ""
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Documented the update process for dependencies.",
+        "impact": "Users will have clearer guidance on how to manage dependencies during updates.",
+        "changes_description": "Added instructions and explanations regarding dependency version updates, especially related to Rust dependencies.",
+        "other_info": ""
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Removed deprecated prefixes from published images.",
+        "impact": "Cleaner and more intuitive image naming conventions.",
+        "changes_description": "The change enhances usability in image management.",
+        "other_info": ""
+      }
+    ]
+  }
+]
