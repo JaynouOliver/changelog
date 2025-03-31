@@ -8,7 +8,9 @@
 
 ## 📺 Demo
 
-Watch how it works: [Demo Video](https://www.youtube.com/watch?v=5zQVlxv-voo)
+Watch how it works:
+
+[![AI Powered Changelog Generator Demo](https://img.youtube.com/vi/l_C51udC520/0.jpg)](https://youtu.be/l_C51udC520)
 
 ##  Overview
 
