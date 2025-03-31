@@ -10,7 +10,7 @@
 
 Watch how it works:
 
-[![AI Powered Changelog Generator Demo](https://img.youtube.com/vi/l_C51udC520/0.jpg)](https://youtu.be/l_C51udC520)
+[![AI Powered Changelog Generator Demo](https://img.youtube.com/vi/uklnbe-KAcw/0.jpg)](https://youtu.be/uklnbe-KAcw)
 
 ##  Overview
 
