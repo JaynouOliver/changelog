@@ -4,7 +4,7 @@
     "new_features": [],
     "bug_fixes": [
       {
-        "whats_new": "Removed migration flag that was no longer needed.",
+        "whats_new": "Removed migration flag.",
         "impact": "Simplified the codebase to avoid confusion and potential issues related to migrations.",
         "changes_description": "",
         "other_info": ""
