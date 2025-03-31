@@ -3,6 +3,91 @@
     "release_name": "PyTorch 2.6.0 Release",
     "new_features": [
       {
+        "whats_new": "New functionality related to multiple Kubernetes clusters for mi300 resources.",
+        "impact": "Improves management capabilities of Kubernetes clusters in PyTorch.",
+        "changes_description": "Updated labels to account for multiple clusters, ensuring even distribution across resources.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Enhanced support for geometry types in Torch.",
+        "impact": "Aids developers in managing spatial data more effectively.",
+        "changes_description": "Added various improvements related to flattening and geometry management.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "CUDA 12.8 support added for enhanced compatibility.",
+        "impact": "Ensures users can leverage the latest CUDA features for performance improvements.",
+        "changes_description": "Integrates CUDA 12.8 functionalities into the existing PyTorch framework.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Fixed assertion errors related to unassigned sizes in certain tensors.",
+        "impact": "Eliminates previously encountered exceptions during operations.",
+        "changes_description": "Corrected errors in partitioners to ensure size assignments are handled appropriately.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Resolved issues with vectorization in CUDA implementations.",
+        "impact": "Optimizes operations involving larger data structures, improving performance.",
+        "changes_description": "Added fixes to enhance vectorization capabilities in dynamic shapes.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Improved error handling for misconfigured environmental variables.",
+        "impact": "Users will experience fewer interruptions due to misconfigurations.",
+        "changes_description": "Ensured default settings are correctly implemented to avoid misconfigurations.",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Additional unit tests for captured dynamic output.",
+        "impact": "Strengthens testing protocols, ensuring robustness in various scenarios.",
+        "changes_description": "Implemented tests for dynamic output shapes, validating performance standards.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "New tests for CUDA-related memory allocations.",
+        "impact": "Improves feedback on memory usage during CUDA operations.",
+        "changes_description": "Establishes comprehensive tests for CUDA-specific configurations.",
+        "other_info": ""
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Updated user documentation for new API functionalities.",
+        "impact": "Provides clearer guidelines for using recent features.",
+        "changes_description": "Enhanced documentation for users to better understand new implementations.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Added examples for new geometric operations in PyTorch.",
+        "impact": "Facilitates easier adoption of advanced features by users.",
+        "changes_description": "Examples demonstrate practical usage of new geometric functions.",
+        "other_info": ""
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Improvements in internal build configurations for better stability.",
+        "impact": "Enhances overall build process reliability.",
+        "changes_description": "Streamlined build processes to include additional checks and balances.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Expanded error logging for debugging purposes.",
+        "impact": "Aids developers in identifying and resolving issues more efficiently.",
+        "changes_description": "Enhanced logging mechanisms to capture more detailed error information.",
+        "other_info": ""
+      }
+    ]
+  },
+  {
+    "release_name": "PyTorch 2.6.0 Release",
+    "new_features": [
+      {
         "whats_new": "Support for multiple clusters while managing MI300 labels.",
         "impact": "This feature accommodates good resource distribution across multiple Kubernetes clusters.",
         "changes_description": "",
