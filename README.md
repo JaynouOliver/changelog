@@ -81,6 +81,7 @@ Currently, all configurations are set as environment variables instead of reposi
 1. **Multiple Release Requirement**: Currently requires at least 2 releases
 2. **Duplicate Prevention**: Manual triggering may create duplicate entries
 3. **Rate Limiting**: Subject to GitHub API and OpenAI API limits
+4. **Delay**: Expect little delay in frontend updates due to caching in Github CDNs, and frontend. (upto 5 mins)
 
 ## 🛣️ Roadmap
 
