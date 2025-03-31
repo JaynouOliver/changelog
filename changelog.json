@@ -3,6 +3,54 @@
     "release_name": "2025.03.4",
     "new_features": [
       {
+        "whats_new": "Added new testing features for ClickHouse.",
+        "impact": "Improves the testing process for analyzing cloud services.",
+        "changes_description": "Implemented tests that run against ClickHouse Cloud to ensure compatibility and functionality.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Updated Docker publish usage.",
+        "impact": "Simplifies the tagging process in Docker deployments.",
+        "changes_description": "Now uses the Git tag name directly as the Docker tag, enhancing the deployment efficiency.",
+        "other_info": ""
+      }
+    ],
+    "bug_fixes": [
+      {
+        "whats_new": "Removed unnecessary migration flags.",
+        "impact": "Reduces potential errors and improves system stability.",
+        "changes_description": "The migration flags have been removed, simplifying the update process.",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Removed redundant prefix from published images.",
+        "impact": "Clears up naming conventions in published images.",
+        "changes_description": "The 'tenzorzero-' prefix has been removed for better clarity.",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Run ClickHouse tests against ClickHouse Cloud.",
+        "impact": "Validates cloud infrastructure compatibility and efficiency.",
+        "changes_description": "These tests ensure the system works seamlessly with ClickHouse Cloud services.",
+        "other_info": ""
+      }
+    ],
+    "documentation": [],
+    "others": [
+      {
+        "whats_new": "Updated dependencies, including the 'request' package.",
+        "impact": "Enhances security and feature set of the application.",
+        "changes_description": "Bumped the version of the 'request' dependency to the latest, improving overall performance and reliability.",
+        "other_info": ""
+      }
+    ]
+  },
+  {
+    "release_name": "2025.03.4",
+    "new_features": [
+      {
         "whats_new": "Updated documentation usage for Docker publishing.",
         "impact": "This change simplifies the tagging process by using the git tag name directly for Docker images, making it easier to manage versions.",
         "changes_description": "Now, the Docker publish uses non-SemVer tags directly as the git tag name will be used for Docker tagging.",
