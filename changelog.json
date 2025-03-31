@@ -3,7 +3,7 @@
     "release_name": "2025.03.4",
     "new_features": [
       {
-        "whats_new": "Added new testing features for ClickHouse.",
+        "whats_new": "Added new testing features ClickHouse.",
         "impact": "Improves the testing process for analyzing cloud services.",
         "changes_description": "Implemented tests that run against ClickHouse Cloud to ensure compatibility and functionality.",
         "other_info": ""
