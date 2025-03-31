@@ -16,7 +16,7 @@
         "other_info": ""
       },
       {
-        "whats_new": "Removed unnecessary prefix from published images.",
+        "whats_new": "Removed unnecessary prefix.",
         "impact": "This cleanup will lead to easier management of images and reduce any ambiguity in their naming.",
         "changes_description": "",
         "other_info": ""
