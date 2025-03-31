@@ -1,1 +1,50 @@
-
+[
+  {
+    "release_name": "2025.03.4",
+    "new_features": [],
+    "bug_fixes": [
+      {
+        "whats_new": "Removed migration flag that was no longer needed.",
+        "impact": "Simplified the codebase to avoid confusion and potential issues related to migrations.",
+        "changes_description": "",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Decreased the number of concurrent runs to 50.",
+        "impact": "This change helps improve system stability by limiting resource usage during peak times.",
+        "changes_description": "",
+        "other_info": ""
+      },
+      {
+        "whats_new": "Removed unnecessary prefix from published images.",
+        "impact": "This cleanup will lead to easier management of images and reduce any ambiguity in their naming.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ],
+    "tests": [
+      {
+        "whats_new": "Run ClickHouse tests against ClickHouse Cloud.",
+        "impact": "Ensures that all functionalities work correctly with the cloud version, better reliability for users.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ],
+    "documentation": [
+      {
+        "whats_new": "Updated Docker publish use to a simpler versioning scheme.",
+        "impact": "Using the Git tag name as the Docker tag makes deployments easier and more reliable.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ],
+    "others": [
+      {
+        "whats_new": "Bumped version requirements for dependencies to keep them up-to-date.",
+        "impact": "Maintaining updated dependencies ensures that the software uses the latest features and security patches.",
+        "changes_description": "",
+        "other_info": ""
+      }
+    ]
+  }
+]
