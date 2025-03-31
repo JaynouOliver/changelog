@@ -4,7 +4,11 @@
 [![License](https://img.shields.io/github/license/JaynouOliver/changelog)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-> Automatically generate beautiful changelogs from your GitHub releases using AI 
+> Automatically generate beautiful changelogs from your GitHub releases using AI. 
+
+## 📺 Demo
+
+Watch how it works: [Demo Video](https://www.youtube.com/watch?v=5zQVlxv-voo)
 
 ##  Overview
 
